@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} [%t] [%p] %F.%M: %m%n</Property>
+    </Properties>
+    <Appenders>
+        <Console name="LogToConsole" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="LogToConsole" />
+        </Root>
+        <Logger level="INFO" name="com.backend.spring.rsocket.server" additivity="false" includeLocation="true">
+            <AppenderRef ref="LogToConsole" />
+        </Logger>
+    </Loggers>
+</Configuration>
